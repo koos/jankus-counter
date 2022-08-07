@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title W3.CSS Template
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %link{:href => "https://www.w3schools.com/w3css/4/w3.css", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Raleway", :rel => "stylesheet"}/
+    :css
+      body,h1 {font-family: "Raleway", sans-serif; background-color: #000;}
+      body, html {height: 100%}
+      .bgimg {
+        background-image: url('/giphy.gif');
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+      }
+  %body
+    .bgimg.w3-display-container.w3-animate-opacity.w3-text-white
+      .w3-display-middle
+        .w3-center
+          %h1.w3-jumbo.w3-animate-top
+            Is it that hard to understand it not to scan the code?
+        %hr.w3-border-grey{:style => "margin:auto;width:40%"}/
+        %p.w3-large.w3-center
+          Congratulations, you are idiot number
+          = @counter.count
+          to scan this QR code!
+      .w3-display-bottomleft.w3-padding-large
+        Powered by
+        %a{:href => "https://jankus.name", :target => "_blank"} Jan Kus
