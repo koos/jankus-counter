@@ -1,11 +1,21 @@
-require "sinatra"
-require "./lib/counter"
-require './database_connection_setup'
+require 'sinatra'
+require 'sinatra/activerecord'
+
+set :database_file, 'config/database.yml'
+
+class Counter < ActiveRecord::Base
+
+  def increment
+    self.count = self.count.next
+    self.save
+  end
+
+end
 
 class CounterApp < Sinatra::Base
 
   before do
-    @counter = Counter.instance
+    @counter = Counter.last || Counter.create
   end
 
   get '/' do
