@@ -11,6 +11,7 @@ gem 'capybara'
 gem 'haml'
 gem 'rake'
 gem 'pry'
+gem 'puma'
 
 group :production do
   # Use Postgresql for ActiveRecord
